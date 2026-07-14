@@ -1,4 +1,4 @@
-package com.example.cicdapp;
+package com.example.cicdapp.controller;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
