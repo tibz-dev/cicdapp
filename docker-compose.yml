@@ -1,7 +1,9 @@
+version: "3.8"
+
 services:
   db:
     image: mysql:8.0
-    container_name: mysql_db
+    container_name: mysql-db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
@@ -13,13 +15,8 @@ services:
 
   app:
     build: .
-    container_name: spring_app
-    restart: always
-    depends_on:
-      - db
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/appdb
-      SPRING_DATASOURCE_USERNAME: appuser
-      SPRING_DATASOURCE_PASSWORD: apppass
+    container_name: cicdapp
     ports:
       - "8080:8080"
+    depends_on:
+      - db
